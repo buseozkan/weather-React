@@ -6,10 +6,11 @@ import { Button } from "semantic-ui-react";
 const refresh = () => {
   window.location.reload();
 };
-const CardExampleCard = ({ weatherData }) => (
+
+const CardExampleCard = ({ weatherData, city }) => (
   <div className="main">
     <div className="top">
-      <p className="header">{weatherData.name}</p>
+      <p className="header">{city ? city : weatherData.name}</p>
       <Button
         className="button"
         inverted
@@ -27,7 +28,7 @@ const CardExampleCard = ({ weatherData }) => (
     </div>
 
     <div className="flex">
-      <p className="temp">Temprature: {weatherData.main.temp} &deg;C</p>
+      <p className="temp">Temperature: {weatherData.main.temp} &deg;C</p>
       <p className="temp">Humidity: {weatherData.main.humidity} %</p>
     </div>
 
